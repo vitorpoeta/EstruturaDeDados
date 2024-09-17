@@ -79,6 +79,44 @@ public class VetorGenerico<T> {
         return -1;
     }
 
+    public boolean contem(T elemento){
+        for(int i=0;i<this.tamanho;i++){
+            if (this.elementos[i].equals(elemento)) {
+                return true;
+            }
+        }
+        return false;
+
+        // ou somente, return busca(elemento) >-1
+    }
+
+    public int retornarUltimoIndice(T elemento){
+        int ultimaPos = -1;
+        for(int i=0;i<this.tamanho;i++){
+            if (this.elementos[i].equals(elemento)) {
+                ultimaPos = i;
+            }
+        }
+        return ultimaPos;
+    }
+
+    public void remover(T elemento){
+        int pos = this.busca(elemento);
+        if(pos>-1){
+            this.remover(pos);
+        }
+    }
+
+    public T obtem(int posicao){
+        return busca(posicao);
+    }
+
+    public void limpar(){
+        for(int i=tamanho-1;i>=0;i--){
+            remover(this.elementos[i]);
+        }
+    }
+
     @Override
     public String toString() {
         StringBuilder s = new StringBuilder();

@@ -48,12 +48,43 @@ public class Main {
 
         VetorGenerico<Object> vetorGenerico = new VetorGenerico<>(3);
 
-        vetorGenerico.adicionar(3); //int (autoboxing para Integer)
+        vetorGenerico.adicionar(3);//int (autoboxing para Integer)
+        vetorGenerico.adicionar(4);//int (autoboxing para Integer)
         vetorGenerico.adicionar("Tres"); //String
+        vetorGenerico.adicionar("Dois"); //String
         vetorGenerico.adicionar(vetor); //Object
+        vetorGenerico.adicionar("Tres"); //String
 
         System.out.println("Tamanho = "+ vetorGenerico.tamanho());
         System.out.println(vetorGenerico);
+
+        //Implementar o metodo contains similar ao ArrayList
+
+        if(vetorGenerico.contem("Tres")){
+            System.out.println("Existe");
+        }else{
+            System.out.println("Nao existe");
+        }
+
+        //Implementar similar ao lastIndexOf, ou seja, a ultima aparição de algo q se repete inumeras vezes.
+
+        System.out.println(vetorGenerico.retornarUltimoIndice("Tres"));
+
+        //Implementar ao vetorGenerico um método chamado remove (T elemento).
+
+        vetorGenerico.remover("Dois");
+        System.out.println("Tamanho: "+vetorGenerico.tamanho());
+        System.out.println(vetorGenerico);
+
+        //Implementar ao vetorGenerico o método obtem (int posição), similar ao get(posicao) do ArrayList.
+
+        System.out.println("Obteve o: "+vetorGenerico.obtem(2));
+
+        //Implementar ao vetorGenerico o método limpar, onde remove todos os elementos do vetor. Similar ao clear.
+
+        vetorGenerico.limpar();
+        System.out.println("Tamanho após limpar: "+vetorGenerico.tamanho());
+        System.out.println("Vazio: "+vetorGenerico);
 
         //Exemplo: Tipo generico que aceita somente Strings
 

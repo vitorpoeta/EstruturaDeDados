@@ -31,7 +31,6 @@ public class ArrayListTeste {
         }else{
             System.out.println("Elemento nao existe no array "+ posicao);
         }
-
         //Algoritmo que retorna o elemento da posicao
         System.out.println(arrayList.get(2));
 
